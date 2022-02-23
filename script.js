@@ -59,7 +59,7 @@ var tekenAlles = function () {
   // speler
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
+  fill("yellow");
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
