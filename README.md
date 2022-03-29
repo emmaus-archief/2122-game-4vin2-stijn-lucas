@@ -31,6 +31,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [ ] x. maak game-over-scherm
 - [ ] x. maak uitlegscherm
 
+
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
 - [ ] *later uitwerken*
