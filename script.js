@@ -27,16 +27,16 @@ var spelerY = 600; // y-positie van speler
 var beweegAlles = function () {
   // speler
 var speed = 10
-if (keyIsDown(68)){
+if (keyIsDown(68) || keyIsDown(RIGHT_ARROW))   {
   spelerX=spelerX+speed;
 }
-if (keyIsDown(65)){
+if (keyIsDown(65) || keyIsDown(LEFT_ARROW)){
   spelerX=spelerX-speed;
 }
-if (keyIsDown(87)){
+if (keyIsDown(87) || keyIsDown(UP_ARROW)){
   spelerY=spelerY-speed;
 }
-if (keyIsDown(83)){
+if (keyIsDown(83) || keyIsDown(DOWN_ARROW)){
   spelerY=spelerY+speed
 }
   // vijand
