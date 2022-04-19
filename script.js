@@ -92,7 +92,8 @@ ellipse(vijandX, vijandY, 10, 10);
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
-  
+  fill("red")
+  ellipse(700, 600, 30, 30)
 };
 
 /**
