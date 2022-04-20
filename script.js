@@ -64,7 +64,9 @@ if (keyIsDown(LEFT_ARROW)) {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+if (spelerX === vijandX && spelerY === vijandY) {
+  spelStatus = GAMEOVER; 
+}
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -76,24 +78,24 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-fill("230, 230, 230");
+fill("black");
 rect(0,0,1280,720)
   // vijand
 fill("red")
 rect(vijandX - 25, vijandY - 25, 50, 50);
 fill("yellow")
-ellipse(vijandX, vijandY, 10, 10);
+ellipse(vijandX, vijandY, 40, 10);
   // kogel
 
   // speler
   fill("blue");
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("yellow");
-  ellipse(spelerX, spelerY, 10, 10);
+  ellipse(spelerX, spelerY, 40, 10);
+  
 
   // punten en health
-  fill("red")
-  ellipse(700, 600, 30, 30)
+
 };
 
 /**
