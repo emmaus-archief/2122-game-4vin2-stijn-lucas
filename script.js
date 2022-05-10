@@ -64,11 +64,21 @@ if (keyIsDown(LEFT_ARROW)) {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if (spelerX === vijandX && spelerY === vijandY) {
+if (spelerX - vijandX < 57 &&
+  spelerX - vijandX > -57 &&
+  spelerY - vijandY < 57 &&
+  spelerY - vijandY > -57) {
   spelStatus = GAMEOVER; 
 }
+if (vijandX - spelerX < 57 &&
+  vijandX - spelerX > -57 &&
+  vijandY - spelerY < 57 &&
+  vijandY - spelerY > -57) {
+  spelStatus=GAMEOVER
+  }
   // botsing kogel tegen vijand
 
+ 
   // update punten en health
 
 };
