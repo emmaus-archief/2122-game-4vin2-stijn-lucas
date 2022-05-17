@@ -14,10 +14,10 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
-var vijandX = 300
-var vijandY = 300
+var spelerX = 660; // x-positie van speler
+var spelerY = 670; // y-positie van speler
+var vijandX = 660
+var vijandY = 50
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -88,8 +88,12 @@ if (vijandX - spelerX < 57 &&
  */
 var tekenAlles = function () {
   // achtergrond
-fill("black");
+fill(0,204, 0);
 rect(0,0,1280,720)
+fill("white")
+rect(520,0,280,20)
+fill("white")
+rect(520,700,280,20)
   // vijand
 fill("red")
 rect(vijandX - 25, vijandY - 25, 50, 50);
@@ -104,8 +108,9 @@ ellipse(vijandX, vijandY, 40, 10);
   ellipse(spelerX, spelerY, 40, 10);
   
 
-  // punten en health
-
+  // punten en health (voetbal)
+  fill("white")
+  ellipse(665,360,30,30)
 };
 
 /**
