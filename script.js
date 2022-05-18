@@ -18,6 +18,8 @@ var spelerX = 660; // x-positie van speler
 var spelerY = 670; // y-positie van speler
 var vijandX = 660
 var vijandY = 50
+var spelerSpringt
+var snelheid
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -27,33 +29,19 @@ var vijandY = 50
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
 var beweegAlles = function () {
-  // speler
-var speed = 10
-if (keyIsDown(68))   {
-  spelerX=spelerX+speed;
-}
-if (keyIsDown(65)){
-  spelerX=spelerX-speed;
-}
-if (keyIsDown(87)){
-  spelerY=spelerY-speed;
-}
-if (keyIsDown(83)){
-  spelerY=spelerY+speed
-}
-  // vijand
-if (keyIsDown(RIGHT_ARROW)) {
- vijandX=vijandX+speed;
-}
-if (keyIsDown(LEFT_ARROW)) {
-  vijandX=vijandX-speed;
- }
- if (keyIsDown(UP_ARROW)) {
-  vijandY=vijandY-speed;
- }
- if (keyIsDown(DOWN_ARROW)) {
-  vijandY=vijandY+speed;
- }
+  // speler lopen
+  if (keyIsDown(68)){
+    spelerX = spelerX + 1;
+  }
+  if (keyIsDown(65)){
+    spelerX = spelerX - 1;
+  }
+  //springen
+  if (spelerSpringt === true && keyIsDown(32)){
+    spelerY = spelerY - snelheid;
+    snelheid = snelheid - 0,1;
+  }
+
   // kogel
 };
 
