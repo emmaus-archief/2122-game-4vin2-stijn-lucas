@@ -21,7 +21,8 @@ var vijandY = 50;
 var spelerSpringt = false; 
 var springSnelheid = 0;
 var springSnelheidStart = 5.5;
-var snelheid;
+var snelheid = 6;
+
 
 
 /* ********************************************* */
@@ -33,12 +34,14 @@ var snelheid;
  */
 var beweegAlles = function () {
   // speler lopen
-var snelheid = 6
+
   if (keyIsDown(68)){
-    spelerX = spelerX + 6;
+    spelerX = spelerX + snelheid;
   }
+  
+
   if (keyIsDown(65)){
-    spelerX = spelerX - 6;
+    spelerX = spelerX - snelheid;
     
   }
   //springen
@@ -51,7 +54,7 @@ var snelheid = 6
     springSnelheid = springSnelheid - 0.2;
   }
   if (spelerY > 669) {
-    spelerSpringt = false;
+    spelerSpringt = false; 
   }
   // kogel
 };
