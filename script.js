@@ -14,13 +14,13 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 660; // x-positie van speler
+var spelerX = 99; // x-positie van speler
 var spelerY = 670; // y-positie van speler
-var vijandX = 660;
-var vijandY = 50;
+var vijandX = 1210;
+var vijandY = 670;
 var spelerSpringt = false; 
 var springSnelheid = 0;
-var springSnelheidStart = 5.5;
+var springSnelheidStart = 5.3;
 var snelheid = 6;
 
 
@@ -35,15 +35,13 @@ var snelheid = 6;
 var beweegAlles = function () {
   // speler lopen
 
-  if (keyIsDown(68)){
+  if (spelerX < 1261 && keyIsDown(68)){
     spelerX = spelerX + snelheid;
   }
-  
-
-  if (keyIsDown(65)){
+  if (spelerX > 44 && keyIsDown(65)){
     spelerX = spelerX - snelheid;
-    
   }
+  
   //springen
   if (spelerSpringt === false && keyIsDown(KEY_SPACE)){
     spelerSpringt = true;
@@ -64,26 +62,16 @@ var beweegAlles = function () {
  * Verwijdert neergeschoten dingen
  * Updatet globale variabelen punten en health
  */
-var verwerkBotsing = function () {
-  // botsing speler tegen vijand
-if (spelerX - vijandX < 57 &&
-  spelerX - vijandX > -57 &&
-  spelerY - vijandY < 57 &&
-  spelerY - vijandY > -57) {
-  spelStatus = GAMEOVER; 
-}
-if (vijandX - spelerX < 57 &&
-  vijandX - spelerX > -57 &&
-  vijandY - spelerY < 57 &&
-  vijandY - spelerY > -57) {
-  spelStatus=GAMEOVER
-  }
+
   // botsing kogel tegen vijand
 
  
   // update punten en health
 
-};
+  var verwerkBotsing = function () {
+    // botsing speler tegen vijand
+ 
+  }
 
 /**
  * Tekent spelscherm
@@ -131,9 +119,7 @@ rect(1191,495,20,4)
 
   // vijand
 fill("red")
-rect(vijandX - 25, vijandY - 25, 50, 50);
-fill("yellow")
-ellipse(vijandX, vijandY, 40, 10);
+rect(vijandX - 25, vijandY - 40, 25, 70);
   // kogel
 
   // speler
@@ -143,7 +129,7 @@ ellipse(vijandX, vijandY, 40, 10);
 
   //basketbal
   fill("orange")
-  ellipse(665,360,30,30)
+  ellipse(665,686,30,30)
 };
 
 /**
