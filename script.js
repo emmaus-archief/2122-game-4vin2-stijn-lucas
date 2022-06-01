@@ -18,13 +18,16 @@ var spelerX = 99; // x-positie van speler
 var spelerY = 670; // y-positie van speler
 var vijandX = 1210;
 var vijandY = 670;
-var balX = 686;
-var balY = 686; 
+var balX = 665;
+var balY = 400; 
 var spelerSpringt = false; 
 var springSnelheid = 0;
 var springSnelheidStart = 5.3;
 var snelheid = 6;
 var balSpringt = false; 
+var balSpringSnelheid = 0;
+var balSpringSnelheidStart =5.3;
+
 
 
 
@@ -59,6 +62,18 @@ var beweegAlles = function () {
     spelerSpringt = false; 
   }
   // bal bounced
+  if (balSpringt === false) {
+    balSpringt === true;
+    balSpringSnelheid = balSpringSnelheidStart
+  }
+  if (balSpringt === true) {
+    balY = balY - balSpringSnelheid ;
+    balSpringSnelheid = balSpringSnelheid - 0.2;
+  }
+  if (balY > 399) {
+    balSpringt = true;
+  }
+
 };
 
 /**
