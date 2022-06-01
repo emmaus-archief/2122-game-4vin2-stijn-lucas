@@ -18,8 +18,8 @@ var spelerX = 99; // x-positie van speler
 var spelerY = 670; // y-positie van speler
 var vijandX = 1210;
 var vijandY = 670;
-var balX = 665;
-var balY = 400; 
+var balX = 654.5;
+var balY = 200; 
 var spelerSpringt = false; 
 var springSnelheid = 0;
 var springSnelheidStart = 5.3;
@@ -70,7 +70,7 @@ var beweegAlles = function () {
     balY = balY - balSpringSnelheid ;
     balSpringSnelheid = balSpringSnelheid - 0.2;
   }
-  if (balY > 399) {
+  if (balY > 199 ) {
     balSpringt = true;
   }
 
