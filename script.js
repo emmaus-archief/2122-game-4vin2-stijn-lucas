@@ -18,10 +18,14 @@ var spelerX = 99; // x-positie van speler
 var spelerY = 670; // y-positie van speler
 var vijandX = 1210;
 var vijandY = 670;
+var balX = 686;
+var balY = 686; 
 var spelerSpringt = false; 
 var springSnelheid = 0;
 var springSnelheidStart = 5.3;
 var snelheid = 6;
+var balSpringt = false; 
+
 
 
 
@@ -54,7 +58,7 @@ var beweegAlles = function () {
   if (spelerY > 669) {
     spelerSpringt = false; 
   }
-  // kogel
+  // bal bounced
 };
 
 /**
@@ -129,7 +133,7 @@ rect(vijandX - 25, vijandY - 40, 25, 70);
 
   //basketbal
   fill("orange")
-  ellipse(665,686,30,30)
+  ellipse(balX - 25,balY - 10,30,30)
 };
 
 /**
