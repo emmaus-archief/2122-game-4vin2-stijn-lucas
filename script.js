@@ -73,8 +73,8 @@ var beweegAlles = function () {
   if (balY > 199) {
     balSpringt = true;
   }
-  if (balY > 689) {
-    balSpringSnelheid = balSpringSnelheid * 0.1
+  if (balY > 689.5) {
+   balSpringSnelheid = 5.2;
   }
 
 };
