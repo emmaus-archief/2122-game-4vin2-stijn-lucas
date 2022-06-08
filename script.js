@@ -24,7 +24,7 @@ var spelerSpringt = false;
 var springSnelheid = 0;
 var springSnelheidStart = 5.3;
 var snelheid = 6;
-var balSpringt = false; 
+var balSpringt = true; 
 var balSpringSnelheid = 0;
 var balSpringSnelheidStart =5.3;
 
@@ -62,19 +62,27 @@ var beweegAlles = function () {
     spelerSpringt = false; 
   }
   // bal bounced
-  if (balSpringt === false) {
-    balSpringt === true;
-    balSpringSnelheid = balSpringSnelheidStart
+  /*
+  if (balY > 199) { // allereerste stuiter (vallen)
+    balSpringt = true;
+    balSpringSnelheid = 0;
   }
-  if (balSpringt === true) {
+  */
+ console.log("balspringstrat ="+balSpringSnelheidStart);
+ console.log("balsprings ="+balSpringSnelheid);
+ console.log("springt"+balSpringt);
+  if (balSpringt === false) { // begin een stuiter
+    balSpringt === true;
+    balSpringSnelheid = balSpringSnelheidStart;
+  }
+  if (balSpringt === true) { // bezig met een stuiter
     balY = balY - balSpringSnelheid ;
     balSpringSnelheid = balSpringSnelheid - 0.2;
   }
-  if (balY > 199) {
-    balSpringt = true;
-  }
-  if (balY > 689.5) {
-   balSpringSnelheid = 5.2;
+  if (balY > 689.5 && balSpringt === true) { // einde stuiter
+
+    balSpringSnelheidStart = balSpringSnelheidStart / 2;
+    balSpringt = false;
   }
 
 };
@@ -92,7 +100,11 @@ var beweegAlles = function () {
 
   var verwerkBotsing = function () {
     // botsing speler tegen vijand
- 
+ if (spelerY - balY < 18 &&
+     spelerY - balY > -15 &&
+     spelerX - balX < 18 &&
+    spelerX - balX > -15)
+    (spelStatus = GAMEOVER)
   }
 
 /**
