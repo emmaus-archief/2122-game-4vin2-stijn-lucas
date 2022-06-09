@@ -27,6 +27,8 @@ var snelheid = 6; // snelheid
 var balSpringt = true; // bal springt 
 var balSpringSnelheid = 0; // bal springsnelheid
 var balSpringSnelheidStart = 10; // bal snelheid bij eerste sprong
+var balSnelheidX = 0; // X snelheid van de bal
+var balSnelheidY = 1; // Y snelheid van de bal
 
 
 
@@ -79,11 +81,12 @@ var beweegAlles = function () {
     balY = balY - balSpringSnelheid ;
     balSpringSnelheid = balSpringSnelheid - 0.2;
   }
-  if (balY > 689.5 && balSpringt === true) { // einde stuiter
-    balY = 689
-    balSpringSnelheidStart = balSpringSnelheid * -0.8;
+  if (balY > 700 && balSpringt === true) { // einde stuiter
+    balY = 700
+    balSpringSnelheidStart = balSpringSnelheid * -0.6;
     balSpringt = false;
   }
+
 
 };
 
