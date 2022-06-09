@@ -10,10 +10,10 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 const KEY_SPACE = 32; //spatiebalk code
-const SPELEN = 1;
+const SPELEN = 1; 
 const GAMEOVER = 2;
-var spelStatus = SPELEN;
 
+var spelStatus = SPELEN; // aan het spelen
 var spelerX = 99; // x-positie van speler
 var spelerY = 670; // y-positie van speler
 var vijandX = 1210; // x-positie van vijand
@@ -26,7 +26,7 @@ var springSnelheidStart = 5.3; // snelheid van sprong bij de start
 var snelheid = 6; // snelheid 
 var balSpringt = true; // bal springt 
 var balSpringSnelheid = 0; // bal springsnelheid
-var balSpringSnelheidStart = 5.3; // bal snelheid bij eerste sprong
+var balSpringSnelheidStart = 10; // bal snelheid bij eerste sprong
 
 
 
@@ -62,7 +62,7 @@ var beweegAlles = function () {
     spelerSpringt = false; 
   }
   // bal bounced
-  /*
+  /*      
   if (balY > 199) { // allereerste stuiter (vallen)
     balSpringt = true;
     balSpringSnelheid = 0;
@@ -72,7 +72,7 @@ var beweegAlles = function () {
  console.log("balsprings ="+balSpringSnelheid);
  console.log("springt"+balSpringt);
   if (balSpringt === false) { // begin een stuiter
-    balSpringt === true;
+    balSpringt = true;
     balSpringSnelheid = balSpringSnelheidStart;
   }
   if (balSpringt === true) { // bezig met een stuiter
@@ -80,8 +80,8 @@ var beweegAlles = function () {
     balSpringSnelheid = balSpringSnelheid - 0.2;
   }
   if (balY > 689.5 && balSpringt === true) { // einde stuiter
-    balY = 650
-    balSpringSnelheidStart = balSpringSnelheidStart / 2;
+    balY = 689
+    balSpringSnelheidStart = balSpringSnelheid * -0.8;
     balSpringt = false;
   }
 
