@@ -80,7 +80,7 @@ var beweegAlles = function () {
     balSpringSnelheid = balSpringSnelheid - 0.2;
   }
   if (balY > 689.5 && balSpringt === true) { // einde stuiter
-
+    balY = 650
     balSpringSnelheidStart = balSpringSnelheidStart / 2;
     balSpringt = false;
   }
@@ -99,12 +99,12 @@ var beweegAlles = function () {
   // update punten en health
 
   var verwerkBotsing = function () {
-    // botsing speler tegen vijand
- if (spelerY - balY < 18 &&
-     spelerY - balY > -15 &&
-     spelerX - balX < 18 &&
-    spelerX - balX > -15)
-    (spelStatus = GAMEOVER)
+// botsing tegen bal perfect
+ if (spelerY - balY < 47 && 
+     spelerY - balY > -56 &&
+     spelerX - balX < 19 &&
+    spelerX - balX > -45.5)
+    (spelStatus = SPELEN)
   }
 
 /**
