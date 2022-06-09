@@ -16,17 +16,17 @@ var spelStatus = SPELEN;
 
 var spelerX = 99; // x-positie van speler
 var spelerY = 670; // y-positie van speler
-var vijandX = 1210;
-var vijandY = 670;
-var balX = 654.5;
-var balY = 200; 
-var spelerSpringt = false; 
-var springSnelheid = 0;
-var springSnelheidStart = 5.3;
-var snelheid = 6;
-var balSpringt = true; 
-var balSpringSnelheid = 0;
-var balSpringSnelheidStart =5.3;
+var vijandX = 1210; // x-positie van vijand
+var vijandY = 670; // y-positie van vijand
+var balX = 654.5; // x-positie van bal
+var balY = 200; // y-positie van bal
+var spelerSpringt = false; // speler springt niet
+var springSnelheid = 0; // springsnelheid
+var springSnelheidStart = 5.3; // snelheid van sprong bij de start
+var snelheid = 6; // snelheid 
+var balSpringt = true; // bal springt 
+var balSpringSnelheid = 0; // bal springsnelheid
+var balSpringSnelheidStart = 5.3; // bal snelheid bij eerste sprong
 
 
 
@@ -100,10 +100,7 @@ var beweegAlles = function () {
 
   var verwerkBotsing = function () {
 // botsing tegen bal perfect
- if (spelerY - balY < 47 && 
-     spelerY - balY > -56 &&
-     spelerX - balX < 19 &&
-    spelerX - balX > -45.5)
+ if (spelerY - balY < 47 && spelerY - balY > -56 && spelerX - balX < 19 && spelerX - balX > -45.5)
     (spelStatus = SPELEN)
   }
 
