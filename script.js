@@ -27,8 +27,8 @@ var snelheid = 6; // snelheid
 var balSpringt = true; // bal springt 
 var balSpringSnelheid = 0; // bal springsnelheid
 var balSpringSnelheidStart = 10; // bal snelheid bij eerste sprong
-var balSnelheidX = 0; // X snelheid van de bal
-var balSnelheidY = 1; // Y snelheid van de bal
+var balSnelheidX = 3; // X snelheid van de bal
+var balSnelheidY = 0; // Y snelheid van de bal
 
 
 
@@ -65,9 +65,6 @@ var beweegAlles = function () {
   }
   // bal bounced
   /*      
-  if (balY > 199) { // allereerste stuiter (vallen)
-    balSpringt = true;
-    balSpringSnelheid = 0;
   }
   */
  console.log("balspringstrat ="+balSpringSnelheidStart);
@@ -83,7 +80,7 @@ var beweegAlles = function () {
   }
   if (balY > 700 && balSpringt === true) { // einde stuiter
     balY = 700
-    balSpringSnelheidStart = balSpringSnelheid * -0.6;
+    balSpringSnelheidStart = balSpringSnelheid * -0.8;
     balSpringt = false;
   }
 
@@ -102,9 +99,18 @@ var beweegAlles = function () {
   // update punten en health
 
   var verwerkBotsing = function () {
-// botsing tegen bal perfect
- if (spelerY - balY < 47 && spelerY - balY > -56 && spelerX - balX < 19 && spelerX - balX > -45.5)
-    (spelStatus = SPELEN)
+// botsing speler tegen bal
+if (spelerY - balY < 47 && spelerY - balY > -56 && spelerX - balX < 19 && spelerX - balX > -45.5) 
+
+
+// botsing bal tegen muur en plafond
+if (balX > 1270)
+balSnelheidX *= -1;
+if (balX < 30)
+balSnelheidX *= -1;
+if (balY < 30)
+balSnelheidY *= -1;
+
   }
 
 /**
