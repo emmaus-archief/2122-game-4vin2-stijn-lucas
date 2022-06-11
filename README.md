@@ -1,12 +1,12 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
-## Mijn spel: *naam van het spel*
+## Mijn spel: *Basketbal*
 Gemaakt door:
-- *naam van leerling 1*
-- *naam van leerling 2*
+- *Stijn Folge*
+- *Lucas Keehnen*
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+*Het spel is gelijk aan basketbal. De bal valt uit de lucht en dan begint het spel. Door tegen de bal aan te lopen vliegt de bal de lucht in en het doel is om te scoren bij de tegenstander.*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
