@@ -67,9 +67,7 @@ var beweegAlles = function () {
   /*      
   }
   */
- console.log("balspringstrat ="+balSpringSnelheidStart);
- console.log("balsprings ="+balSpringSnelheid);
- console.log("springt"+balSpringt);
+
   if (balSpringt === false) { // begin een stuiter
     balSpringt = true;
     balSpringSnelheid = balSpringSnelheidStart;
@@ -83,7 +81,13 @@ var beweegAlles = function () {
     balSpringSnelheidStart = balSpringSnelheid * -0.8;
     balSpringt = false;
   }
-
+  if (balSnelheidY > 10) {
+   balSnelheidY = 10;
+  }  
+  if (balSnelheidX > 10) {
+    balSnelheidX = 10;
+  }
+  balX += balSnelheidX
 
 };
 
@@ -100,19 +104,29 @@ var beweegAlles = function () {
 
   var verwerkBotsing = function () {
 // botsing speler tegen bal
-if (spelerY - balY < 47 && spelerY - balY > -56 && spelerX - balX < 19 && spelerX - balX > -45.5) 
+if (spelerY - balY < 47 && spelerY - balY > -56 && spelerX - balX < 19 && spelerX - balX > -45.5) {
+  console.log("geraakt")
+balSpringSnelheid *= -1.1;
+balSnelheidX += 1.5;
+balSnelheidY += 0.2;
+} 
+if (balY > 690) {
+  balSnelheidY += 3;
+}
 
 
 // botsing bal tegen muur en plafond
-if (balX > 1270)
+if (balX > 1270) {
 balSnelheidX *= -1;
-if (balX < 30)
+}
+if (balX < 30) {
 balSnelheidX *= -1;
-if (balY < 30)
+}
+if (balY < 0) {
+  balY = 20;
 balSnelheidY *= -1;
-
+}
   }
-
 /**
  * Tekent spelscherm
  */
