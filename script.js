@@ -22,14 +22,14 @@ var balX = 654.5; // x-positie van bal
 var balY = 200; // y-positie van bal
 var spelerSpringt = false; // speler springt niet
 var springSnelheid = 0; // springsnelheid
-var springSnelheidStart = 5.3; // snelheid van sprong bij de start
+var springSnelheidStart = 6.2; // snelheid van sprong bij de start
 var spelerSpringt2 = false; // speler2 springt niet
 var springSnelheid2 = 0; // springsnelheid speler 2
-var springSnelheidStart2 = 5.3; // snelheid van sprong bij de start speler 2
-var snelheid = 6; // snelheid 
+var springSnelheidStart2 = 6.2; // snelheid van sprong bij de start speler 2
+var snelheid = 7.5; // snelheid 
 var balSpringt = true; // bal springt 
 var balSpringSnelheid = 0; // bal springsnelheid
-var balSpringSnelheidStart = 10; // bal snelheid bij eerste sprong
+var balSpringSnelheidStart = 4; // bal snelheid bij eerste sprong
 var balSnelheidX = 3; // X snelheid van de bal
 var balSnelheidY = 0; // Y snelheid van de bal
 
@@ -63,7 +63,7 @@ var beweegAlles = function () {
   }
   
   //springen
-  if (spelerSpringt === false && keyIsDown(KEY_SPACE)){
+  if (spelerSpringt === false && keyIsDown(KEY_SPACE) || spelerSpringt === false && keyIsDown(87)){
     spelerSpringt = true;
     springSnelheid = springSnelheidStart
   }
