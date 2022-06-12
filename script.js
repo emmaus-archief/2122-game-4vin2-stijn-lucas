@@ -16,13 +16,16 @@ const GAMEOVER = 2;
 var spelStatus = SPELEN; // aan het spelen
 var spelerX = 99; // x-positie van speler
 var spelerY = 670; // y-positie van speler
-var vijandX = 1210; // x-positie van vijand
-var vijandY = 670; // y-positie van vijand
+var speler2X = 1210; // x-positie van vijand
+var speler2Y = 670; // y-positie van vijand
 var balX = 654.5; // x-positie van bal
 var balY = 200; // y-positie van bal
 var spelerSpringt = false; // speler springt niet
 var springSnelheid = 0; // springsnelheid
 var springSnelheidStart = 5.3; // snelheid van sprong bij de start
+var spelerSpringt2 = false; // speler2 springt niet
+var springSnelheid2 = 0; // springsnelheid speler 2
+var springSnelheidStart2 = 5.3; // snelheid van sprong bij de start speler 2
 var snelheid = 6; // snelheid 
 var balSpringt = true; // bal springt 
 var balSpringSnelheid = 0; // bal springsnelheid
@@ -51,6 +54,14 @@ var beweegAlles = function () {
     spelerX = spelerX - snelheid;
   }
   
+  //speler2 lopen
+  if (speler2X < 1261 && keyIsDown(39)){
+    speler2X = speler2X + snelheid;
+  }
+  if (speler2X > 44 && keyIsDown(37)){
+    speler2X = speler2X - snelheid;
+  }
+  
   //springen
   if (spelerSpringt === false && keyIsDown(KEY_SPACE)){
     spelerSpringt = true;
@@ -62,6 +73,19 @@ var beweegAlles = function () {
   }
   if (spelerY > 669) {
     spelerSpringt = false; 
+  }
+
+  //springen speler 2
+  if (spelerSpringt2 === false && keyIsDown(38)){
+    spelerSpringt2 = true;
+    springSnelheid2 = springSnelheidStart2
+  }
+  if (spelerSpringt2 === true) {
+    speler2Y = speler2Y - springSnelheid2 ;
+    springSnelheid2 = springSnelheid2 - 0.2;
+  }
+  if (speler2Y > 669) {
+    spelerSpringt2 = false; 
   }
   // bal bounced
   /*      
@@ -114,7 +138,16 @@ if (balY > 690) {
   balSnelheidY += 3;
 }
 
-
+// botsing speler2 tegen bal
+if (speler2Y - balY < 47 && speler2Y - balY > -56 && speler2X - balX < 19 && speler2X - balX > -45.5) {
+  console.log("geraakt")
+balSpringSnelheid *= -1.1;
+balSnelheidX += 1.5;
+balSnelheidY += 0.2;
+} 
+if (balY > 690) {
+  balSnelheidY += 3;
+}
 // botsing bal tegen muur en plafond
 if (balX > 1270) {
 balSnelheidX *= -1;
@@ -171,9 +204,9 @@ fill('orange')
 rect(1191,495,20,4)
 
 
-  // vijand
+  // speler2
 fill("red")
-rect(vijandX - 25, vijandY - 40, 25, 70);
+rect(speler2X - 25, speler2Y - 40, 25, 70);
   // kogel
 
   // speler
